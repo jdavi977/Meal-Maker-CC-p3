@@ -10,10 +10,17 @@ const menu = {
         if (typeof priceToCheck === 'number') {
             return this._price = priceToCheck;
         }
+    },
+    get todaysSpecial () {
+        if (this._meal && this._price) {
+            return `Today's Special is ${this._meal} for $${this._price}!`;
+        } else {
+            return 'Meal or price was not set correctly!';
+        }
     }
 }
 
-menu.meal = 'burger';
+menu.meal = 'Burger';
 menu.price = 3;
 
-console.log(menu);
+console.log(menu.todaysSpecial);
