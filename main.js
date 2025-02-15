@@ -5,5 +5,15 @@ const menu = {
         if (typeof mealToCheck === 'string') {
             return this._meal = mealToCheck;
         }
+    },
+    set price (priceToCheck) {
+        if (typeof priceToCheck === 'number') {
+            return this._price = priceToCheck;
+        }
     }
 }
+
+menu.meal = 'burger';
+menu.price = 3;
+
+console.log(menu);
